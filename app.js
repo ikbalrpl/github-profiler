@@ -11,8 +11,20 @@ const options = {
   }
 }
 
-let request = https.request(options, (result) => {
-  console.log('Got response: ', result.statusCode)
+// TODO: Read the data
+let request = https.request(options, (response) => {
+  // console.log('Got response: ', result.statusCode)
+  let body = ''
+  response.on('data', (data) => {
+    body = body + data
+  })
+  response.on('end', ()=>{
+    // console.log(body)
+    console.log(typeof body)
+  })
+  // TODO: parse the data
+  // convert String to JSON (Javascript Object)
+  // TODO: Print the data out
 })
 
 request.end()
@@ -21,11 +33,6 @@ request.on('error', (e) =>{
   console.error(e)
 })
 
-// TODO: Read the data
-
-
-// TODO: parse the data
-// TODO: Print the data out
 
 // function functionName(param) {
 //   console.log('fungsi ini dipanggil ' + param)

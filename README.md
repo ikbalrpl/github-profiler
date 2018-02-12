@@ -6,5 +6,5 @@ Solution: Use NodeJS to connect ti GitHub API to get profile info and print out 
 ## TODO
 * [x] Connect to GitHub api
 * [x] Read the data
-* [ ] parse the data
+* [x] parse the data
 * [ ] Print the data out
